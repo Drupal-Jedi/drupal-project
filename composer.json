@@ -37,7 +37,10 @@
   "scripts": {
     "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
     "post-install-cmd": [
-      "bash tools/composer/drupal-scaffold.sh"
+      "@drupal-scaffold"
+    ],
+    "post-update-cmd": [
+      "@drupal-scaffold"
     ]
   },
   "extra": {
