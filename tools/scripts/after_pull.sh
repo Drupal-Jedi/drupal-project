@@ -2,12 +2,12 @@
 
 # Script execute all necessary commands after each pull.
 
-if [ ! -d "../provision/local" ]; then
-  echo "You must run it from the docroot directory!"
+if [ ! -d "provision/local" ]; then
+  echo "You must run it from the project root directory!"
   exit
 fi
 
-cd ../provision/local
+cd provision/local
 echo "1/4 Installing new composer and npm packages. Building css."
 docker-compose exec php /bin/bash -c "cd docroot && composer install"
 echo "2/4 Importing new configuration"

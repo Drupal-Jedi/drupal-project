@@ -5,13 +5,18 @@ dependencies with [Composer](https://getcomposer.org/).
 
 ## Usage
 
-First you need to [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
-
-After that you can create the project:
-
-```
-composer create-project drupaljedi/project project_name --stability dev --no-interaction
-```
+1. [Install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
+1. Create the project : `composer create-project drupaljedi/project project_name --stability dev --no-interaction`
+1. Replace all occurrences of `project_name` with your project name in the following files:
+`docroot/sites/default/settings.php`
+`docroot/sites/prj-settings.inc`
+`provision/local/docker-compose.yml`
+`provision/dev/docker-compose.yml`
+`provision/stage/docker-compose.yml`
+1. Create directory `provision/local/docker-runtime/settings`
+1. Copy with your project name the `provision/local/example.project_name-settings.inc` file into the `provision/local/docker-runtime/settings` directory and replace all credentials to the right ones.
+1. Run docker containers: `cd provision/local && docker-compose up -d`
+1. Install Drupal: `./tools/scripts/install.sh`
 
 With `composer require ...` you can download new dependencies to your 
 installation.

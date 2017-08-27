@@ -1,0 +1,60 @@
+version: "2"
+
+services:
+  php:
+    image: registry.qajedi.ru:5043/drupal/php7:latest
+    environment:
+      PHP_DOCROOT: docroot # Relative path inside the /var/www/html/ directory.
+      PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S mailhog:1025
+      PHP_XDEBUG_ENABLED: 1 # Set 1 to enable.
+      PROJECT_ENV_TYPE: local
+    volumes:
+      - ../../:/var/www/html
+      - ./docker-runtime/settings/:/var/www/site-php/project_name
+      - /mnt/nfs3/:/mnt/nfs3/
+
+  nginx:
+    image: registry.qajedi.ru:5043/drupal/nginx:latest
+    networks:
+      - local-net
+      - default
+    environment:
+      # replace place holder with comma separated domains.
+      NGINX_SERVER_NAME: project_name.loc
+      NGINX_UPSTREAM_NAME: php
+      NGINX_DOCROOT: docroot # Relative path inside the /var/www/html/ directory.
+      DRUPAL_VERSION: 8 # Allowed: 7, 8.
+      # replace examples with domains from NGINX_SERVER_NAME
+      VIRTUAL_HOST: project_name.loc
+      HTTPS_METHOD: noredirect
+    volumes_from:
+      - php
+
+  mailhog:
+    image: registry.qajedi.ru:5043/mailhog:latest
+    environment:
+    # edit example to your prj name
+      VIRTUAL_HOST: project_name.mailhog.loc
+      VIRTUAL_PORT: 8025
+    networks:
+      - local-net
+      - default
+
+  mariadb:
+    image: registry.qajedi.ru:5043/mariadb:latest
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_DATABASE: 'project_name' # change dbname
+      MYSQL_USER: 'project_name' #change db user
+      MYSQL_PASSWORD: 'project_name' #change password to db
+    volumes:
+      - ./docker-runtime/mysql:/var/lib/mysql  #change placeholder to dir where to store mysql data
+
+# Don't touch that settings
+networks:
+  local-net:
+    external: true
+
+volumes:
+  data:
+
