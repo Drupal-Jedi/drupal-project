@@ -15,7 +15,7 @@ dependencies with [Composer](https://getcomposer.org/).
 `provision/stage/docker-compose.yml`
 1. Create directory `provision/local/docker-runtime/settings`
 1. Copy with your project name the `provision/local/example.project_name-settings.inc` file into the `provision/local/docker-runtime/settings` directory and replace all credentials to the right ones.
-1. Run docker containers: `cd provision/local && docker-compose up -d`
+1. Run docker containers: `cd provision/local && docker-compose up -d && cd -`
 1. Install Drupal: `./tools/scripts/install.sh`
 
 With `composer require ...` you can download new dependencies to your 
