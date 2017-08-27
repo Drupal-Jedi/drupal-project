@@ -18,7 +18,7 @@ installation.
 
 ```
 cd project_name
-composer require drupal/coffee
+composer require drupal/be_sure
 ```
 
 The `composer create-project` command passes ownership of all files to the 
