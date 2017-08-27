@@ -22,8 +22,7 @@
     "drupal/admin_toolbar": "^1.19",
     "drupal/coffee": "^1.0@beta",
     "drupal/core": "~8.0",
-    "webflo/drupal-finder": "^0|^1.0.0",
-    "webmozart/path-util": "^2.3"
+    "webflo/drupal-finder": "^0|^1.0.0"
   },
   "require-dev": {
     "drupal/devel": "^1.0"
@@ -38,13 +37,20 @@
     "optimize-autoloader": true,
     "discard-changes": true
   },
+  "autoload": {
+    "classmap": [
+      "tools/scripts/composer/ScriptHandler.php"
+    ]
+  },
   "scripts": {
     "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
     "post-install-cmd": [
-      "@drupal-scaffold"
+      "@drupal-scaffold",
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
     ],
     "post-update-cmd": [
-      "@drupal-scaffold"
+      "@drupal-scaffold",
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
     ]
   },
   "extra": {
