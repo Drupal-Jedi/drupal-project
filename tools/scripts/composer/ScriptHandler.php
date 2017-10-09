@@ -193,6 +193,9 @@ class ScriptHandler {
     $defaultPrjSettings[] = '    $config[\'system.performance\'][\'css\'][\'preprocess\'] = TRUE;';
     $defaultPrjSettings[] = '    $config[\'system.performance\'][\'js\'][\'preprocess\'] = TRUE;';
     $defaultPrjSettings[] = '    $config[\'system.performance\'][\'cache\'][\'page\'][\'max_age\'] = 86400;';
+    $defaultPrjSettings[] = '';
+    $defaultPrjSettings[] = '    // Decrease/increase the memory limit for PROD environment.';
+    $defaultPrjSettings[] = '    ini_set(\'memory_limit\', \'256M\');';
     $defaultPrjSettings[] = '    break;';
     $defaultPrjSettings[] = '';
     $defaultPrjSettings[] = '  case PROJECT_ENV_STAGE:';
@@ -200,6 +203,9 @@ class ScriptHandler {
     $defaultPrjSettings[] = '    $config[\'system.performance\'][\'css\'][\'preprocess\'] = TRUE;';
     $defaultPrjSettings[] = '    $config[\'system.performance\'][\'js\'][\'preprocess\'] = TRUE;';
     $defaultPrjSettings[] = '    $config[\'system.performance\'][\'cache\'][\'page\'][\'max_age\'] = 86400;';
+    $defaultPrjSettings[] = '';
+    $defaultPrjSettings[] = '    // Decrease/increase the memory limit for STAGE environment.';
+    $defaultPrjSettings[] = '    ini_set(\'memory_limit\', \'256M\');';
     $defaultPrjSettings[] = '    break;';
     $defaultPrjSettings[] = '';
     $defaultPrjSettings[] = '  case PROJECT_ENV_DEV:';
@@ -210,6 +216,9 @@ class ScriptHandler {
     $defaultPrjSettings[] = '    $config[\'system.performance\'][\'css\'][\'preprocess\'] = TRUE;';
     $defaultPrjSettings[] = '    $config[\'system.performance\'][\'js\'][\'preprocess\'] = TRUE;';
     $defaultPrjSettings[] = '    $config[\'system.performance\'][\'cache\'][\'page\'][\'max_age\'] = 86400;';
+    $defaultPrjSettings[] = '';
+    $defaultPrjSettings[] = '    // Decrease/increase the memory limit for DEV environment.';
+    $defaultPrjSettings[] = '    ini_set(\'memory_limit\', \'256M\');';
     $defaultPrjSettings[] = '    break;';
     $defaultPrjSettings[] = '';
     $defaultPrjSettings[] = '  case PROJECT_ENV_LOCAL:';
