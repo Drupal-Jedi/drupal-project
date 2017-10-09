@@ -224,6 +224,9 @@ class ScriptHandler {
     $defaultPrjSettings[] = '    $settings[\'cache\'][\'bins\'][\'render\'] = \'cache.backend.null\';';
     $defaultPrjSettings[] = '    $settings[\'cache\'][\'bins\'][\'dynamic_page_cache\'] = \'cache.backend.null\';';
     $defaultPrjSettings[] = '    $config[\'advagg.settings\'][\'enabled\'] = FALSE;';
+    $defaultPrjSettings[] = '';
+    $defaultPrjSettings[] = '    // Allow any hosts for local usage.';
+    $defaultPrjSettings[] = '    $settings[\'trusted_host_patterns\'] = [];';
     $defaultPrjSettings[] = '    break;';
     $defaultPrjSettings[] = '}';
     $defaultPrjSettings[] = '';
