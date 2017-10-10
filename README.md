@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Drupal-Jedi/project.svg?branch=8.x)](https://travis-ci.org/Drupal-Jedi/project)
+
 # Composer template for Drupal projects
 
 This project template should provide a kickstart for managing your site
