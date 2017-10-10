@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Script execute all necessary commands after each pull.
-
 if [ ! -d "provision/local" ]; then
   echo "You must run it from the project root directory!"
   exit
