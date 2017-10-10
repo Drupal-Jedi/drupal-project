@@ -11,6 +11,7 @@ services:
     volumes:
       - ../../:/var/www/html
       - ./docker-runtime/settings/:/var/www/site-php/project_name
+      - ./php.ini:/etc/php7/conf.d/custom.php.ini
     restart: always
 
   nginx:

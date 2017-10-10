@@ -12,6 +12,7 @@ services:
       - ../../:/var/www/html
       - ./docker-runtime/settings/:/var/www/site-php/project_name
       - /mnt/nfs3/:/mnt/nfs3/
+      - ./php.ini:/etc/php7/conf.d/custom.php.ini
 
   nginx:
     image: registry.qajedi.ru:5043/drupal/nginx:latest
