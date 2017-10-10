@@ -9,9 +9,9 @@ $databases = [];
 
 // For separate DB.
 $databases['default']['default'] = [
-  'database' => 'DB_NAME',
-  'username' => 'USER',
-  'password' => 'PASSWORD',
+  'database' => 'project_name',
+  'username' => 'project_name',
+  'password' => 'project_name',
   'prefix' => '',
   'host' => 'mariadb',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
