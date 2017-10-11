@@ -3,8 +3,8 @@ language: php
 php:
  - 7.1
 
-addons:
-  mariadb: '10.0'
+services:
+  - mysql
 
 before_install:
   - composer global require "hirak/prestissimo:^0.3"
