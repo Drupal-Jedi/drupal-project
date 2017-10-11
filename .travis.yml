@@ -3,11 +3,18 @@ language: php
 php:
  - 7.1
 
+addons:
+  mariadb: '10.0'
+
 before_install:
   - composer global require "hirak/prestissimo:^0.3"
 
 install:
   - composer install
+
+before_script:
+- mysql -u root -e "CREATE USER 'travis'@'localhost' IDENTIFIED BY 'travis';"
+- mysql -u root -e "GRANT ALL ON *.* TO 'travis'@'localhost';"
 
 script: tools/scripts/dummy.sh
 
