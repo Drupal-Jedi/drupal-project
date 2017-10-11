@@ -12,10 +12,6 @@ before_install:
 install:
   - composer install
 
-before_script:
-- mysql -u root -e "CREATE USER 'travis'@'localhost' IDENTIFIED BY 'travis';"
-- mysql -u root -e "GRANT ALL ON *.* TO 'travis'@'localhost';"
-
 script: tools/scripts/dummy.sh
 
 notifications:
