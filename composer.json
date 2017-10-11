@@ -27,7 +27,8 @@
     "webflo/drupal-finder": "^0|^1.0.0"
   },
   "require-dev": {
-    "drupal/devel": "^1.0"
+    "drupal/devel": "^1.0",
+    "drush/drush": "^8.1"
   },
   "conflict": {
     "drupal/drupal": "*"
