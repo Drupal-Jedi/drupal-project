@@ -1,5 +1,22 @@
 language: php
+
 php:
- - '7.1'
-before_script: composer install
+ - 7.1
+
+services:
+  - mysql
+
+before_install:
+  - composer global require "hirak/prestissimo:^0.3"
+
+install:
+  - composer install
+
+before_script:
+- mysql -u root -e "CREATE USER 'travis_test'@'localhost' IDENTIFIED BY 'travis_test';"
+- mysql -u root -e "GRANT ALL ON *.* TO 'travis_test'@'localhost';"
+
 script: tools/scripts/dummy.sh
+
+notifications:
+  email: false

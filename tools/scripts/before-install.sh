@@ -1,12 +1,12 @@
 #!/bin/bash
 
-if [ ! -d "docroot" ]; then
-  echo "You must run it from the project root directory!"
+if [ ! -d 'docroot' ]; then
+  echo 'You must run it from the project root directory!'
   exit 1
 fi
 
 if [ -z "$1" ]; then
-  echo "You must pass project name as argument to the script"
+  echo 'You must pass project name as argument to the script!'
   exit 1
 fi
 
@@ -22,3 +22,4 @@ mkdir provision/local/docker-runtime
 mkdir provision/local/docker-runtime/settings
 
 cp provision/local/example.project_name-settings.inc provision/local/docker-runtime/settings/"$project_name"-settings.inc
+sed -i 's/project_name/'"$project_name"'/g' provision/local/docker-runtime/settings/"$project_name"-settings.inc
