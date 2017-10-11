@@ -13,8 +13,8 @@ install:
   - composer install
 
 before_script:
-- mysql -u root -e "CREATE USER 'traves'@'localhost' IDENTIFIED BY 'traves';"
-- mysql -u root -e "GRANT ALL ON *.* TO 'traves'@'localhost';"
+- mysql -u root -e "CREATE USER 'travis_test'@'localhost' IDENTIFIED BY 'travis_test';"
+- mysql -u root -e "GRANT ALL ON *.* TO 'travis_test'@'localhost';"
 
 script: tools/scripts/dummy.sh
 
