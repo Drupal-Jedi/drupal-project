@@ -1,6 +1,6 @@
 # Composer template for Drupal projects
 
-[![Build Status](https://travis-ci.org/Drupal-Jedi/project.svg?branch=8.x)](https://travis-ci.org/Drupal-Jedi/project)
+[![Build Status](https://travis-ci.org/Drupal-Jedi/project.svg?branch=8.x)](https://travis-ci.org/Drupal-Jedi/project) [![Total Downloads](https://poser.pugx.org/drupaljedi/project/downloads)](https://packagist.org/packages/drupaljedi/project)
 
 This project template should provide a kickstart for managing your site
 dependencies with [Composer](https://getcomposer.org/).
