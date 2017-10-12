@@ -16,7 +16,7 @@ before_script:
 - mysql -u root -e "CREATE USER 'travis_test'@'localhost' IDENTIFIED BY 'travis_test';"
 - mysql -u root -e "GRANT ALL ON *.* TO 'travis_test'@'localhost';"
 
-script: tools/scripts/dummy.sh
+script: tools/scripts/travis-ci.sh
 
 notifications:
   email: false
