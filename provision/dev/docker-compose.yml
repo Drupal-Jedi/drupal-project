@@ -7,6 +7,7 @@ services:
       PHP_DOCROOT: docroot # Relative path inside the /var/www/html/ directory.
       PHP_SENDMAIL_PATH: /usr/sbin/sendmail -t -i -S opensmtpd:25
       PHP_XDEBUG_ENABLED: 0 # Set 1 to enable.
+      PHP_XHPROF_ENABLED: 0 # Set 1 to enable.
       PROJECT_ENV_TYPE: dev
     volumes:
       - ../../:/var/www/html
