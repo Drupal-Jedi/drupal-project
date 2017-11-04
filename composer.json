@@ -48,11 +48,11 @@
   "scripts": {
     "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
     "post-install-cmd": [
-      "@drupal-scaffold",
+      "bash ./tools/scripts/composer/drupal-scaffold.sh",
       "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
     ],
     "post-update-cmd": [
-      "@drupal-scaffold",
+      "bash ./tools/scripts/composer/drupal-scaffold.sh",
       "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
     ]
   },
