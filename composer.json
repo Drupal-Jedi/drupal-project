@@ -50,6 +50,10 @@
     "post-install-cmd": [
       "bash ./tools/scripts/composer/drupal-scaffold.sh",
       "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
+    ],
+    "post-update-cmd": [
+      "bash ./tools/scripts/composer/drupal-scaffold.sh",
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
     ]
   },
   "extra": {
